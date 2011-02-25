@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="39.592cm" height="18.555cm" viewBox="-0.950 1.750 38.642 20.305"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="17.977" y="1.800" width="6.323" height="2.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="17.977" y="1.800" width="6.323" height="2.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="21.138" y="3.195"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Current Location</text>
+<rect x="-0.550" y="11.100" width="7.500" height="1.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-0.550" y="11.100" width="7.500" height="1.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="3.200" y="12.245"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Relationship Status</text>
+<rect x="18.375" y="7.535" width="7.500" height="1.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="18.375" y="7.535" width="7.500" height="1.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="22.125" y="8.680"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Relationship Status</text>
+<rect x="11.900" y="7.075" width="2.600" height="1.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="11.900" y="7.075" width="2.600" height="1.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="13.200" y="8.220"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Age</text>
+<rect x="29.875" y="6.735" width="2.600" height="1.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="29.875" y="6.735" width="2.600" height="1.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="31.175" y="7.880"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Age</text>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 17.977,3.000 C 13.050,3.375 13.339,4.475 13.258,6.539 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="13.244,6.913 13.013,6.404 13.258,6.539 13.513,6.423 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="13.244,6.913 13.013,6.404 13.258,6.539 13.513,6.423 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 11.900,8.025 C 10.987,8.025 2.813,7.626 3.070,10.566 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="3.103,10.940 2.810,10.463 3.070,10.566 3.308,10.420 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="3.103,10.940 2.810,10.463 3.070,10.566 3.308,10.420 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 21.025,4.250 C 20.887,5.775 21.572,5.375 21.862,7.006 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="21.928,7.375 21.594,6.926 21.862,7.006 22.086,6.839 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="21.928,7.375 21.594,6.926 21.862,7.006 22.086,6.839 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 24.345,3.000 C 26.997,3.000 31.210,4.227 31.190,6.200 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="31.186,6.575 30.941,6.073 31.190,6.200 31.441,6.078 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="31.186,6.575 30.941,6.073 31.190,6.200 31.441,6.078 "/>
+<ellipse cx="36.203" cy="13.213" rx="2.390" ry="2.166" fill="#FFFFFF" stroke="none"  /><ellipse cx="36.203" cy="13.213" rx="2.390" ry="2.166" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="36.203" y="13.008"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Car</text>
+<text x="36.203" y="13.808"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Insurance</text>
+<ellipse cx="25.274" cy="14.263" rx="2.249" ry="2.328" fill="#FFFFFF" stroke="none"  /><ellipse cx="25.274" cy="14.263" rx="2.249" ry="2.328" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="25.274" y="14.058"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Car</text>
+<text x="25.274" y="14.858"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Insurance</text>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 22.466,9.484 C 22.991,11.024 23.586,11.456 23.809,11.827 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="24.002,12.148 23.530,11.848 23.809,11.827 23.958,11.591 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="24.002,12.148 23.530,11.848 23.809,11.827 23.958,11.591 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 32.475,8.160 C 33.278,8.160 35.307,9.344 35.591,10.570 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="35.675,10.935 35.319,10.505 35.591,10.570 35.806,10.392 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="35.675,10.935 35.319,10.505 35.591,10.570 35.806,10.392 "/>
+<ellipse cx="30.123" cy="13.793" rx="2.123" ry="1.666" fill="#FFFFFF" stroke="none"  /><ellipse cx="30.123" cy="13.793" rx="2.123" ry="1.666" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="30.123" y="13.588"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Dating</text>
+<text x="30.123" y="14.388"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Site</text>
+<ellipse cx="1.223" cy="18.011" rx="2.123" ry="1.666" fill="#FFFFFF" stroke="none"  /><ellipse cx="1.223" cy="18.011" rx="2.123" ry="1.666" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="1.223" y="17.806"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Dating</text>
+<text x="1.223" y="18.606"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Site</text>
+<ellipse cx="19.548" cy="14.971" rx="2.123" ry="1.666" fill="#FFFFFF" stroke="none"  /><ellipse cx="19.548" cy="14.971" rx="2.123" ry="1.666" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="19.548" y="14.766"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Dating</text>
+<text x="19.548" y="15.566"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Site</text>
+<ellipse cx="15.498" cy="12.701" rx="2.123" ry="1.666" fill="#FFFFFF" stroke="none"  /><ellipse cx="15.498" cy="12.701" rx="2.123" ry="1.666" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="15.498" y="12.496"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Dating</text>
+<text x="15.498" y="13.296"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Site</text>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 20.342,9.485 C 18.309,10.625 17.543,12.475 18.356,13.127 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="18.649,13.362 18.102,13.244 18.356,13.127 18.415,12.854 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="18.649,13.362 18.102,13.244 18.356,13.127 18.415,12.854 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 14.550,8.025 C 15.313,8.025 15.486,9.359 15.490,10.498 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="15.492,10.873 15.240,10.374 15.490,10.498 15.740,10.372 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="15.492,10.873 15.240,10.374 15.490,10.498 15.740,10.372 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 2.588,13.050 C 1.288,15.175 0.125,15.175 0.306,15.996 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="0.387,16.363 0.035,15.928 0.306,15.996 0.523,15.821 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="0.387,16.363 0.035,15.928 0.306,15.996 0.523,15.821 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 30.331,8.684 C 29.749,9.374 28.358,10.441 29.062,11.778 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="29.237,12.110 28.783,11.784 29.062,11.778 29.225,11.551 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="29.237,12.110 28.783,11.784 29.062,11.778 29.225,11.551 "/>
+<ellipse cx="7.870" cy="18.242" rx="2.670" ry="2.013" fill="#FFFFFF" stroke="none"  /><ellipse cx="7.870" cy="18.242" rx="2.670" ry="2.013" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="7.870" y="18.037"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Ed Student</text>
+<text x="7.870" y="18.837"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Deals</text>
+<ellipse cx="10.342" cy="13.558" rx="2.670" ry="2.013" fill="#FFFFFF" stroke="none"  /><ellipse cx="10.342" cy="13.558" rx="2.670" ry="2.013" fill="none" stroke="#000000"  stroke-width="0.100" /><text x="10.342" y="13.353"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Ed Student</text>
+<text x="10.342" y="14.153"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Deals</text>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 4.259,13.049 C 5.452,14.174 6.015,14.982 6.552,15.926 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="6.738,16.252 6.273,15.941 6.552,15.926 6.708,15.693 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="6.738,16.252 6.273,15.941 6.552,15.926 6.708,15.693 "/>
+<path stroke="#000000" fill="none" stroke-width="0.100"  d="M 11.851,8.920 C 10.343,9.920 11.173,10.426 10.997,11.089 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="10.901,11.451 10.787,10.904 10.997,11.089 11.271,11.032 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="10.901,11.451 10.787,10.904 10.997,11.089 11.271,11.032 "/>
+<text x="13.643" y="5.125"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Edinburgh</text>
+<text x="21.793" y="5.625"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+London</text>
+<text x="28.442" y="3.625"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Glasgow</text>
+<text x="29.543" y="10.675"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+21</text>
+<text x="33.992" y="8.325"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+18 or 19</text>
+<text x="18.843" y="11.925"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Single</text>
+<text x="-0.908" y="14.575"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Single</text>
+<text x="23.892" y="11.125"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Relationship</text>
+<text x="4.242" y="15.125"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Relationship</text>
+<text x="6.692" y="7.625"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+18</text>
+<text x="14.443" y="10.075"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+19</text>
+<text x="11.092" y="10.175"  fill="#000000" text-anchor="start" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+20</text>
+</svg>

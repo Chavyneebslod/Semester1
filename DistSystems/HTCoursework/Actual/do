@@ -1,0 +1,6 @@
+#!/bin/bash
+/usr/java/jdk1.6.0_21/bin/idlj -fall src/auctioning.idl 
+javac -d New/ src/*.java
+java -Dorg.omg.CORBA.ORBInitialHost=anubis.macs.hw.ac.uk \
+     -Dorg.omg.CORBA.ORBInitialPort=2011 \
+     -classpath ./New Startup

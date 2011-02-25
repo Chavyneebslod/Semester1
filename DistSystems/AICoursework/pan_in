@@ -1,0 +1,339 @@
+
+/*SIGNALS DEFINITION */
+#define train 10
+#define blocked 1
+#define clear 2
+#define onLine 3
+
+#define Attn 6
+#define queryClear 7
+#define enteringSect 8
+#define outSect 9
+
+#define notPassed  99
+#define passed 100
+
+#define go 40
+#define noGo 41
+
+
+/*CHANNELS DEFINITION */
+chan blockAB= [2] of {byte};
+chan blockBC= [2] of {byte};
+
+chan instrumentB = [0] of  {byte};
+chan instrumentC= [0] of  {byte};
+
+chan bLineAB = [1] of  {byte};
+chan bLineBA = [1] of  {byte};
+chan bLineBC = [1] of  {byte}; 
+chan bLineCB = [1] of  {byte};
+
+chan sigA = [0] of  {byte};
+chan sigB = [0] of  {byte};
+chan sigC = [0] of  {byte};
+
+chan aToTrain =[0]  of  {byte};
+chan bToTrain =[0]  of  {byte};
+chan cToTrain =[0]  of  {byte};
+
+
+proctype SignalBoxA(chan toBComms, fromBComms, signal, instruments){
+  byte currentSignal;
+  byte currentInstruments = blocked;
+  byte trackCircuits = notPassed;
+ 
+StartBoxA:
+  signal ! noGo;
+  
+  /* ASK FOR ATTENTION AND CONFIRM REPLY */
+progress:
+  toBComms ! Attn;
+  fromBComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+
+  /* ASK IF LINE IS READY AND CONFIM REPLY */
+  toBComms ! queryClear;  
+  fromBComms ? currentSignal;
+  if :: (currentSignal == queryClear) ; fi;
+
+  /* GET NEW INSTRUMENT READINGS */
+  instruments ? currentInstruments;
+  if :: (currentInstruments == clear) ; fi;
+
+  /* SEND ENTERING SECTION, CHANGE SIGNAL AND RECIEVE REPLY */
+  toBComms ! enteringSect;
+  signal ! go;
+  fromBComms ? currentSignal;
+  if :: (currentSignal == enteringSect);  fi;
+
+  /* GET NEW INSTRUMENT READINGS */
+  instruments ? currentInstruments;
+
+  /* GET AND CONFIRM IF  TRAIN HAS PASSED SIGNAL */
+  signal ? trackCircuits;
+  if :: (trackCircuits == passed); fi;
+
+  signal ! noGo;
+
+  /* GET ATTENTION SIGNAL FROM B AND RETURN IT */
+  fromBComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+  toBComms ! Attn;
+
+  /* GET OUT SECTION SIGNAL FROM B AND UPDATE INSTRUMENTS */
+  fromBComms ? currentSignal;
+  if  :: (currentSignal == outSect); fi;
+  instruments ? currentInstruments;
+
+  goto StartBoxA;
+}
+
+proctype SignalBoxB(chan fromAComms, toAComms, fromCComms, toCComms, signal, instrumentsA, instrumentsC){
+  byte currentSignal;
+  byte insA = blocked;
+  byte currentInstruments = blocked;
+  byte trackCircuits = notPassed;
+
+startBoxB:
+  signal ! noGo;
+
+  /* GET ATTN SIGNAL FROM A AND REPLY */
+progress:
+  fromAComms ? currentSignal;
+  if
+  :: (currentSignal == Attn);
+  fi;
+
+  toAComms ! Attn;
+
+  /* GET QUERY SIGNAL FROM A AND REPLY */
+  fromAComms ?currentSignal;
+  if
+  :: (currentSignal == queryClear & insA  == blocked);
+  fi;
+  toAComms ! queryClear;
+  
+  
+  /* SET INSTRUMENTS TO CLEAR, GET ENTERING SECT SIGNAL AND REPLY */
+  instrumentsA ! clear;
+  insA = clear;
+  fromAComms ? currentSignal;
+  if :: (currentSignal == enteringSect);  fi;
+  toAComms ! enteringSect;
+
+  /* SET INSTRUMENTS TO ONLINE */
+  instrumentsA ! onLine;
+  insA = onLine;
+
+  
+  
+  /*********** NOW TRAIN ENTERS BC *************/
+ 
+  /* SEND ATTN SIGNAL TO C AND GET REPLY */
+  toCComms ! Attn;
+  fromCComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+
+  /* ASK C IF LINE IS CLEAR AND GET REPLY */
+  toCComms ! queryClear;
+  fromCComms ? currentSignal;
+
+  /* GET INSTRUMENT SETTINGS FROM C */
+  if :: (currentSignal == queryClear) ; fi;
+  instrumentsC ? currentInstruments;
+  if :: (currentInstruments == clear) ; fi;
+
+  /* SEND ENTERING SECT SIGNAL TO C, GET REPLY AND SET LIGHT TO GO */
+  toCComms ! enteringSect;
+  fromCComms ? currentSignal;
+  if :: (currentSignal == enteringSect);  fi;
+  signal ! go;
+
+  /* GET ONLINE SIGNAL FROM C */
+  instrumentsC ? currentInstruments;
+
+  signal ? trackCircuits;
+  if :: (trackCircuits == passed); fi;
+
+  signal ! noGo;
+
+  fromCComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+
+  toCComms ! Attn;
+
+  fromCComms ? currentSignal;
+  if  :: (currentSignal == outSect); fi;
+
+  instrumentsC ? currentInstruments;
+
+  /*************   TRAIN ENTERED C ************/
+  signal ! noGo;
+  toAComms ! Attn;
+  
+  fromAComms ? currentSignal;
+  if :: (currentSignal == Attn);  fi;
+
+  toAComms ! outSect;
+  instrumentsA ! blocked;
+  insA = blocked;
+
+  goto startBoxB;
+}
+
+proctype SignalBoxC(chan fromBComms, toBComms, signal, instrumentsC ){
+  byte currentSignal;
+  byte currentInstruments = blocked;
+
+startBoxC:
+  signal ! noGo;
+progress:
+  fromBComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+  toBComms ! Attn;
+
+  fromBComms ? currentSignal;
+  if :: (currentSignal ==  queryClear & currentInstruments == blocked); fi;
+  toBComms ! queryClear;
+
+  currentInstruments = clear;
+  instrumentsC ! clear;
+
+  fromBComms ? currentSignal;
+  if :: (currentSignal == enteringSect); fi;
+  toBComms ! enteringSect;
+
+  currentInstruments = onLine;
+  instrumentsC ! onLine;
+
+  toBComms ! Attn;
+  fromBComms ? currentSignal;
+  if :: (currentSignal == Attn); fi;
+
+  toBComms ! outSect;
+  currentInstruments = blocked;
+  instrumentsC ! blocked; 
+  signal ! go;
+   
+  goto startBoxC; 
+
+}
+
+proctype SignalA(chan toSigBox, trainC){
+  byte currentSignal = noGo;
+  byte pass = notPassed;
+
+signalA:
+  toSigBox ? currentSignal;
+progress:
+  toSigBox ?currentSignal;
+ 
+  if 
+  :: (currentSignal == go); 
+  fi;
+
+  trainC ! go;
+  trainC ? pass;
+  if 
+  :: (pass == passed)-> pass = notPassed; 
+  fi;
+  toSigBox ! passed;
+  skip;
+  toSigBox ? currentSignal;
+  
+  goto signalA  
+} 
+
+proctype SignalB(chan toSigBox, trainC){
+  byte currentSignal = noGo;
+  byte pass = notPassed;
+
+signalB:  
+  toSigBox ? currentSignal;
+progress:
+  toSigBox ?currentSignal;
+
+  if
+  :: (currentSignal == go);
+  fi;
+
+  trainC ! go;
+  trainC ? pass;
+  if
+  :: (pass == passed)-> notPassed;
+  fi;
+  toSigBox ! passed;
+  skip;
+  toSigBox ? currentSignal;
+  toSigBox ? currentSignal;
+  
+  goto signalB;
+}
+
+proctype SignalC(chan toSigBox, trainC){
+  byte currentSignal = noGo;
+
+signalC:
+  toSigBox ? currentSignal;
+progress:
+  toSigBox ?currentSignal;
+
+  if
+  :: (currentSignal == go);
+  fi;
+
+  trainC ! go;
+  currentSignal = noGo;
+  goto signalC;
+}
+
+proctype Train(chan aSig, bSig, cSig, sectAB, sectBC; byte next){
+  byte currentSignal = noGo;
+  byte emptyVar;
+
+  
+  aSig ? currentSignal;
+  if :: (currentSignal == go); fi;
+
+  sectAB ! train;
+  aSig ! passed;
+
+  
+ bSig ? currentSignal;
+  if :: (currentSignal == go) -> ; fi;
+
+  sectAB ? emptyVar;
+  sectBC ! train;
+  bSig ! passed;
+
+   /* ******** PREVIOUS LOCATION OF FORK ********/  
+
+  cSig ? currentSignal;
+  if :: (currentSignal == go) -> currentSignal = noGo; fi;
+
+  sectBC ? emptyVar;
+
+ progress:
+if
+:: (next>0) -> run Train(aSig, bSig, cSig, sectAB, sectBC, next-1);
+fi;   
+}  
+
+proctype monitor(){
+progress: do
+  :: assert(nfull(blockAB) && nfull(blockBC))
+  od
+}
+
+init{
+  /*run monitor();*/
+  run SignalA(sigA, aToTrain);
+  run SignalB(sigB, bToTrain);
+  run SignalC(sigC, cToTrain);
+  run SignalBoxA(bLineAB, bLineBA, sigA, instrumentB);
+  run SignalBoxB(bLineAB, bLineBA, bLineCB, bLineBC, sigB, instrumentB, instrumentC);
+  run SignalBoxC(bLineBC, bLineCB, sigC, instrumentC);  
+  run Train(aToTrain, bToTrain, cToTrain, blockAB, blockBC, 7); 
+ }
+

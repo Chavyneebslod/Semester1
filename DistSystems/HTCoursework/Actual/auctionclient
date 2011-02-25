@@ -1,0 +1,5 @@
+#! /bin/sh
+java -Dorg.omg.CORBA.ORBInitialHost=anubis.macs.hw.ac.uk \
+     -Dorg.omg.CORBA.ORBInitialPort=2011 \
+     -classpath ./New auctionclient
+

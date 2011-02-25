@@ -1,0 +1,216 @@
+#define p	nfull(blockAB)
+#define q	nfull(blockBC)
+
+	/*
+	 * Formula As Typed: []!(p&&q)
+	 */
+
+never {    /* ([]!(p&&q)) */
+accept_init:
+T0_init:
+	if
+	:: (((! ((p))) || (! ((q))))) -> goto T0_init
+	fi;
+}
+
+#ifdef NOTES
+Use Load to open a file or a template.
+#endif
+#ifdef RESULT
+warning: for p.o. reduction to be valid the never claim must be stutter-invariant
+(never claims generated from LTL formulae are stutter-invariant)
+depth 0: Claim reached state 5 (line 353)
+pan:1: claim violated! (at depth 3)
+pan: wrote pan_in.trail
+
+(Spin Version 5.2.5 -- 17 April 2010)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 92 byte, depth reached 3, errors: 1
+        2 states, stored
+        0 states, matched
+        2 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.000	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.276	actual memory usage for states (unsuccessful compression: 133996.30%)
+         	state-vector as stored = 144700 byte + 16 byte overhead
+    2.000	memory used for hash table (-w19)
+    0.305	memory used for DFS stack (-m10000)
+    2.501	total actual memory usage
+
+unreached in proctype SignalBoxA
+	line 47, "pan.___", state 1, "signal!41"
+	line 51, "pan.___", state 2, "toBComms!6"
+	line 52, "pan.___", state 3, "fromBComms?currentSignal"
+	line 53, "pan.___", state 5, "((currentSignal==6))"
+	line 56, "pan.___", state 7, "toBComms!7"
+	line 57, "pan.___", state 8, "fromBComms?currentSignal"
+	line 58, "pan.___", state 10, "((currentSignal==7))"
+	line 61, "pan.___", state 12, "instruments?currentInstruments"
+	line 62, "pan.___", state 14, "((currentInstruments==2))"
+	line 65, "pan.___", state 16, "toBComms!8"
+	line 66, "pan.___", state 17, "signal!40"
+	line 67, "pan.___", state 18, "fromBComms?currentSignal"
+	line 68, "pan.___", state 20, "((currentSignal==8))"
+	line 71, "pan.___", state 22, "instruments?currentInstruments"
+	line 74, "pan.___", state 23, "signal?trackCircuits"
+	line 75, "pan.___", state 25, "((trackCircuits==100))"
+	line 77, "pan.___", state 27, "signal!41"
+	line 80, "pan.___", state 28, "fromBComms?currentSignal"
+	line 81, "pan.___", state 30, "((currentSignal==6))"
+	line 82, "pan.___", state 32, "toBComms!6"
+	line 85, "pan.___", state 33, "fromBComms?currentSignal"
+	line 86, "pan.___", state 35, "((currentSignal==9))"
+	line 87, "pan.___", state 37, "instruments?currentInstruments"
+	line 90, "pan.___", state 39, "-end-"
+	(24 of 39 states)
+unreached in proctype SignalBoxB
+	line 99, "pan.___", state 1, "signal!41"
+	line 103, "pan.___", state 2, "fromAComms?currentSignal"
+	line 105, "pan.___", state 4, "((currentSignal==6))"
+	line 108, "pan.___", state 6, "toAComms!6"
+	line 111, "pan.___", state 7, "fromAComms?currentSignal"
+	line 113, "pan.___", state 9, "(((currentSignal==7)&(insA==1)))"
+	line 115, "pan.___", state 11, "toAComms!7"
+	line 119, "pan.___", state 12, "instrumentsA!2"
+	line 120, "pan.___", state 13, "insA = 2"
+	line 121, "pan.___", state 14, "fromAComms?currentSignal"
+	line 121, "pan.___", state 16, "((currentSignal==8))"
+	line 122, "pan.___", state 18, "toAComms!8"
+	line 125, "pan.___", state 19, "instrumentsA!3"
+	line 126, "pan.___", state 20, "insA = 3"
+	line 133, "pan.___", state 21, "toCComms!6"
+	line 127, "pan.___", state 22, "fromCComms?currentSignal"
+	line 128, "pan.___", state 24, "((currentSignal==6))"
+	line 131, "pan.___", state 26, "toCComms!7"
+	line 132, "pan.___", state 27, "fromCComms?currentSignal"
+	line 135, "pan.___", state 29, "((currentSignal==7))"
+	line 136, "pan.___", state 31, "instrumentsC?currentInstruments"
+	line 137, "pan.___", state 33, "((currentInstruments==2))"
+	line 140, "pan.___", state 35, "toCComms!8"
+	line 141, "pan.___", state 36, "fromCComms?currentSignal"
+	line 142, "pan.___", state 38, "((currentSignal==8))"
+	line 143, "pan.___", state 40, "signal!40"
+	line 146, "pan.___", state 41, "instrumentsC?currentInstruments"
+	line 148, "pan.___", state 42, "signal?trackCircuits"
+	line 149, "pan.___", state 44, "((trackCircuits==100))"
+	line 151, "pan.___", state 46, "signal!41"
+	line 153, "pan.___", state 47, "fromCComms?currentSignal"
+	line 154, "pan.___", state 49, "((currentSignal==6))"
+	line 156, "pan.___", state 51, "toCComms!6"
+	line 158, "pan.___", state 52, "fromCComms?currentSignal"
+	line 159, "pan.___", state 54, "((currentSignal==9))"
+	line 161, "pan.___", state 56, "instrumentsC?currentInstruments"
+	line 164, "pan.___", state 57, "signal!41"
+	line 165, "pan.___", state 58, "toAComms!6"
+	line 167, "pan.___", state 59, "fromAComms?currentSignal"
+	line 168, "pan.___", state 61, "((currentSignal==6))"
+	line 170, "pan.___", state 63, "toAComms!9"
+	line 171, "pan.___", state 64, "instrumentsA!1"
+	line 172, "pan.___", state 65, "insA = 1"
+	line 173, "pan.___", state 67, "-end-"
+	(44 of 67 states)
+unreached in proctype SignalBoxC
+	line 180, "pan.___", state 1, "signal!41"
+	line 182, "pan.___", state 2, "fromBComms?currentSignal"
+	line 183, "pan.___", state 4, "((currentSignal==6))"
+	line 184, "pan.___", state 6, "toBComms!6"
+	line 186, "pan.___", state 7, "fromBComms?currentSignal"
+	line 187, "pan.___", state 9, "(((currentSignal==7)&(currentInstruments==1)))"
+	line 188, "pan.___", state 11, "toBComms!7"
+	line 190, "pan.___", state 12, "currentInstruments = 2"
+	line 191, "pan.___", state 13, "instrumentsC!2"
+	line 192, "pan.___", state 14, "fromBComms?currentSignal"
+	line 193, "pan.___", state 16, "((currentSignal==8))"
+	line 194, "pan.___", state 18, "toBComms!8"
+	line 196, "pan.___", state 19, "currentInstruments = 3"
+	line 197, "pan.___", state 20, "instrumentsC!3"
+	line 198, "pan.___", state 21, "toBComms!6"
+	line 199, "pan.___", state 22, "fromBComms?currentSignal"
+	line 200, "pan.___", state 24, "((currentSignal==6))"
+	line 202, "pan.___", state 26, "toBComms!9"
+	line 203, "pan.___", state 27, "currentInstruments = 1"
+	line 204, "pan.___", state 28, "instrumentsC!1"
+	line 204, "pan.___", state 29, "signal!40"
+	line 208, "pan.___", state 31, "-end-"
+	(22 of 31 states)
+unreached in proctype SignalA
+	line 217, "pan.___", state 2, "toSigBox?currentSignal"
+	line 220, "pan.___", state 4, "((currentSignal==40))"
+	line 223, "pan.___", state 6, "trainC!40"
+	line 224, "pan.___", state 7, "trainC?pass"
+	line 226, "pan.___", state 10, "((pass==100))"
+	line 227, "pan.___", state 12, "toSigBox!100"
+	line 229, "pan.___", state 14, "toSigBox?currentSignal"
+	line 232, "pan.___", state 16, "-end-"
+	(8 of 16 states)
+unreached in proctype SignalB
+	line 239, "pan.___", state 1, "toSigBox?currentSignal"
+	line 241, "pan.___", state 2, "toSigBox?currentSignal"
+	line 244, "pan.___", state 4, "((currentSignal==40))"
+	line 247, "pan.___", state 6, "trainC!40"
+	line 248, "pan.___", state 7, "trainC?pass"
+	line 250, "pan.___", state 9, "(99)"
+	line 250, "pan.___", state 10, "((pass==100))"
+	line 252, "pan.___", state 12, "toSigBox!100"
+	line 254, "pan.___", state 14, "toSigBox?currentSignal"
+	line 255, "pan.___", state 15, "toSigBox?currentSignal"
+	line 258, "pan.___", state 17, "-end-"
+	(11 of 17 states)
+unreached in proctype SignalC
+	line 264, "pan.___", state 1, "toSigBox?currentSignal"
+	line 266, "pan.___", state 2, "toSigBox?currentSignal"
+	line 269, "pan.___", state 4, "((currentSignal==40))"
+	line 272, "pan.___", state 6, "trainC!40"
+	line 273, "pan.___", state 7, "currentSignal = 41"
+	line 274, "pan.___", state 9, "-end-"
+	(6 of 9 states)
+unreached in proctype Train
+	line 281, "pan.___", state 1, "aSig?currentSignal"
+	line 282, "pan.___", state 3, "((currentSignal==40))"
+	line 284, "pan.___", state 5, "sectAB!10"
+	line 285, "pan.___", state 6, "aSig!100"
+	line 288, "pan.___", state 7, "bSig?currentSignal"
+	line 289, "pan.___", state 9, "((currentSignal==40))"
+	line 291, "pan.___", state 11, "sectAB?emptyVar"
+	line 292, "pan.___", state 12, "sectBC!10"
+	line 293, "pan.___", state 13, "bSig!100"
+	line 297, "pan.___", state 14, "cSig?currentSignal"
+	line 298, "pan.___", state 17, "((currentSignal==40))"
+	line 300, "pan.___", state 19, "sectBC?emptyVar"
+	line 304, "pan.___", state 21, "(run Train(aSig,bSig,cSig,sectAB,sectBC,(next-1)))"
+	line 304, "pan.___", state 22, "((next>0))"
+	line 306, "pan.___", state 24, "-end-"
+	(15 of 24 states)
+unreached in proctype monitor
+	line 310, "pan.___", state 2, "assert((nfull(blockAB)&&nfull(blockBC)))"
+	line 312, "pan.___", state 5, "-end-"
+	(2 of 5 states)
+unreached in proctype :init:
+	line 317, "pan.___", state 2, "(run SignalB(sigB,bToTrain))"
+	line 318, "pan.___", state 3, "(run SignalC(sigC,cToTrain))"
+	line 319, "pan.___", state 4, "(run SignalBoxA(bLineAB,bLineBA,sigA,instrumentB))"
+	line 320, "pan.___", state 5, "(run SignalBoxB(bLineAB,bLineBA,bLineCB,bLineBC,sigB,instrumentB,instrumentC))"
+	line 321, "pan.___", state 6, "(run SignalBoxC(bLineBC,bLineCB,sigC,instrumentC))"
+	line 322, "pan.___", state 7, "(run Train(aToTrain,bToTrain,cToTrain,blockAB,blockBC,7))"
+	line 323, "pan.___", state 8, "-end-"
+	(7 of 8 states)
+unreached in proctype :never:
+	line 358, "pan.___", state 8, "-end-"
+	(1 of 8 states)
+
+pan: elapsed time 0 seconds
+0.00user 0.00system 0:00.01elapsed 45%CPU (0avgtext+0avgdata 0maxresident)k
+0inputs+0outputs (0major+765minor)pagefaults 0swaps
+
+#endif

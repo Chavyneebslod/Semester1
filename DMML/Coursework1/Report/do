@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pdflatex report.tex
+#dvipdf report.dvi
+evince report.pdf
+

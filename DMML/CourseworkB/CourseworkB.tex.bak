@@ -1,0 +1,56 @@
+\documentclass[10pt]{article}
+
+\usepackage[cm]{fullpage}
+
+\title{Coursework B}
+\author{Joseph Davidson - 071729468}
+\date{}
+
+\begin{document}
+
+  \maketitle
+  
+  \section{Methods for Classifying Data with Missing Values }
+
+  The purpose of this coursework was to learn some methods for dealing with missing data values
+  in classification problems. As it turns out, there are multiple ways to deal with such situations,
+  from something simple like ignoring the record to more advanced techniques such as predicting an
+  answer, or range of answers for the missing data.\newline
+ 
+  This short paper will quickly cover the following methods used for classfiying such data:   
+
+  \begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+    \item Ignoring the instance.
+    \item Find the missing values.
+    \item Imputation  of the missing values.
+    \item Using a specialised model (such as Max-Margin).
+  \end{itemize}
+
+  For reference, the first 3 items are referred to in \cite{1314553}, whilst the Max-Margin algorithm is the topic of \cite{citeulike:4732435}.
+
+  \paragraph{Ignoring the instance: } This method is the simplest and does exactly what it says on the the tin.
+    The instance is ignored and often discarded from the set. It is often used when there is a penalty for
+    incorrect classifcation -- where it is safer to just refuse to classify the instance -- or for data sets that
+    have completely random missing data -- so that no Imputation algorithm for the set is feasible.
+
+  \paragraph{Find the missing values: } It may be possible to retrieve the missing values by some means such as
+    from a 3$^{rd}$ party source at evaluation time, or by performing a test to get the attributes. These actions typically
+    incurr a cost, but can complete the data set under scrutiny, leading to a better classification. Of course, this method
+    only applies if there is a way to actually obtain the missing values.
+
+  \paragraph{Imputation: } This refers to a class of methods that estimate the value or its distribution for a particular
+    model. There are multiple types of imputation and a type should be picked for the situations that the classifier
+    will likley find itself in. An example is by simply taking the mean or mode of the attribute over the rest of the set
+    and imputting it.
+
+  \paragraph{Specialised models: } There have been a handful of models developed that are robust to errors and ommisions
+    in the data to be classified.  \cite{citeulike:4732435} goes into one of these -- Max-Margin -- in detail. The C4.5 
+    algorithm uses a method of imputation to handle missing values in its input.
+
+\bibliographystyle{alpha}
+\bibliography{citation} 
+
+\end{document}

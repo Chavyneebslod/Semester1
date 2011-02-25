@@ -1,0 +1,10 @@
+  module Dealing {
+      typedef struct b { string name;
+                         long   number; } buy;
+      typedef sequence<buy> buys;
+
+      interface Deal { void addBuy(in buy b);
+                       buys getBuys();
+      };
+  };
+

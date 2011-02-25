@@ -1,0 +1,24 @@
+ module Auctioning{
+   
+   typedef struct b { string itemRef;
+                      string poster;
+                      string itemName;
+                      string itemDesc;
+                      double minBid;
+                      long long endTime;
+                      double winningBid;
+                      string winningBidder; } itemInfo;
+   
+   typedef sequence<itemInfo> items;
+
+   interface Auction { itemInfo  getItem(in string itemRef );
+                       items     getAllItems();
+                       string    placeBid(in string itemRef, in string poster, in double bid);
+                       
+                       void      addItem(in itemInfo b);
+                       string    login(in string uname, in string password);
+                       void      logout(in string uname);
+   };
+};                          
+
+

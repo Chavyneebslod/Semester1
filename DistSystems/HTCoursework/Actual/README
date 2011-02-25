@@ -1,0 +1,5 @@
+To run follow these steps:
+
+1.) run '/usr/java/jdk1.6.0_21/bin/tnameserv -ORBInitialPort 2011' on anubis
+2.) ssh into another computer and excute the auctionServer script
+3.) run the do script 

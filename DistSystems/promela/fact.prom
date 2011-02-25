@@ -1,0 +1,18 @@
+proctype fact(int n; chan res){
+  int result;
+  if
+  :: (n <= 1) -> res ! 1;
+  :: (n >= 2) -> chan child = [1] of {int};
+               run fact(n-1, child);
+               child ? result;
+               res! n*result;
+  fi
+}
+
+init{
+  int result;
+  chan child = [1] of {int};
+  run fact(5, child);
+  child ? result;
+  printf("Result: %d\n",result);
+}

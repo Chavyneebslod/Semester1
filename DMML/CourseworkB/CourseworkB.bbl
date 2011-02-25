@@ -1,0 +1,14 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{CHE{\etalchar{+}}08}
+
+\bibitem[CHE{\etalchar{+}}08]{citeulike:4732435}
+Gal Chechik, Geremy Heitz, Gal Elidan, Pieter Abbeel, and Daphne Koller.
+\newblock Max-margin classification of data with absent features.
+\newblock {\em J. Mach. Learn. Res.}, 9:1--21, 2008.
+
+\bibitem[STP07]{1314553}
+Maytal Saar-Tsechansky and Foster Provost.
+\newblock Handling missing values when applying classification models.
+\newblock {\em J. Mach. Learn. Res.}, 8:1623--1657, 2007.
+
+\end{thebibliography}
